@@ -39,7 +39,7 @@ border-width: 2px;
 }
 
 h4 {
-margin: 3px;
+margin: 6px 3px;
 font-weight: 300;
 }
 
@@ -68,7 +68,6 @@ flex-direction: column;
 height: auto;
 width: 90%;
 top: 10%;
-left: 5%;
 }
 
 .box-img2 {
