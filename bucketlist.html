@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bucket List</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="bucket container">
+        <h1>DK's Bucket List</h1>
+        <ul>
+            <!-- Add more items as needed -->
+        </ul>
+    </div>
+</body>
+<script>
+    const bucket = {
+        gobekliTepe: {
+            name: "Gobekli Tepe",
+            location: "Turkey",
+            description: "The world's oldest known temple.",
+            url: "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe",
+            bucketEntryTitle: "Visit Gobekli Tepe",
+        },
+        tuvalu_islands: {
+            name: "Tuvalu Islands",
+            location: "Tuvalu",
+            description: "A group of nine islands in the Pacific Ocean.",
+            url: "https://en.wikipedia.org/wiki/Tuvalu",
+            bucketEntryTitle: "Visit Tuvalu Islands",
+        },
+    }
+
+    const bucketList = document.querySelector('.bucket ul');
+
+    for (const item in bucket) {
+        const listItem = document.createElement('li');
+        const bucketEntry = document.createElement('a');
+        bucketEntry.href = bucket[item].url;
+        bucketEntry.textContent = bucket[item].bucketEntryTitle;
+
+        listItem.appendChild(bucketEntry);
+        bucketList.appendChild(listItem);
+        for (const key in bucket[item]) {
+            const bucketDetail = document.createElement('p');
+            if (key !== 'bucketEntryTitle' && key !== 'url') {
+                bucketDetail.textContent = `${key}: ${bucket[item][key]}`;
+            }else{
+                bucketEntry.textContent = bucket[item][key];
+            }
+            listItem.appendChild(bucketDetail);
+        }
+    }
+
+</script>
+</html>
