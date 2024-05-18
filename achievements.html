@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Achievements</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="achieve container">
+        <h1>DK's Achievements</h1>
+        <ul>
+            <!-- Add more items as needed -->
+        </ul>
+    </div>
+</body>
+<script>
+    const achievements = {
+        hackathons: {
+            name: "Hackathons",
+            hackathons: [{
+                    name: "PHPHackacthon @ Webmavens LLP",
+                    description: "Won 1st Runner Up.",
+                    location: "Ahmedabad, India",
+                    duration: "6 hours",
+                    participants: 30,
+                    tech_used: "PHP, MySQL",
+                    won_as: "solo"
+                },
+                {
+                    name: " hackNUthon 5.0 @ Nirma University",
+                    description: "Won 2nd Runner Up.",
+                    location: "Ahmedabad, India",
+                    duration: "36 hours",
+                    participants: "900+",
+                    tech_used: "UI, Python, Ollama, lamma3, Flask",
+                    won_as: "team of 4"
+                }
+            ]
+        }
+    }
+
+    const achievementsList = document.querySelector('.achieve ul');
+
+    const hackathon = achievements.hackathons.hackathons;
+    console.log(hackathon);
+
+    for (const item of hackathon) {
+        const ul = document.createElement('ul');
+        const listItem = document.createElement('li');
+        const achievementEntry = document.createElement('p');
+        achievementEntry.textContent = item.name;
+        listItem.appendChild(achievementEntry);
+        ul.appendChild(listItem);
+        for (const key in item) {
+            const achievementDetail = document.createElement('p');
+            if (key !== 'name') {
+                achievementDetail.textContent = `${key}: ${item[key]}`;
+            }
+            listItem.appendChild(achievementDetail);
+        }
+        achievementsList.appendChild(ul);
+    }
+
+
+</script>
+</html>
