@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 body {
-background-color: #061115;
+  background-color: #061115;
+  font-family: "Roboto Mono", monospace;
 }
 
 .box-landscape {
@@ -82,64 +83,56 @@ background-color: #061115;
   }
 }
 
-
 h4 {
-margin: 6px 3px;
-font-weight: 300;
+  margin: 6px 3px;
+  font-weight: 300;
 }
 
 a:hover {
-color: #6791c9;
+  color: #6791c9;
 }
 
 a {
-text-decoration: none;
-color: #d9d7d6;
+  text-decoration: none;
+  color: #d9d7d6;
 }
 
 .wrapper {
-background-color: #162026;
-position: relative;
-height: 400px;
-width: 700px;
-margin: 200px auto;
-box-shadow: -10px -10px 30px;
+  background-color: #162026;
+  position: relative;
+  height: 400px;
+  width: 700px;
+  margin: 200px auto;
+  box-shadow: -10px -10px 30px;
 }
 
 /* Media queries for mobile devices */
 @media only screen and (max-width: 767px) {
-.box-landscape {
-flex-direction: column;
-height: auto;
-width: 90%;
-top: 10%;
-}
+  .box-landscape {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+    top: 10%;
+  }
 
-.box-img2 {
-height: auto;
-width: 100%;
-}
+  .box-img2 {
+    height: auto;
+    width: 100%;
+  }
 
-.links {
-height: auto;
-width: 100%;
-margin-left: 0;
-margin-top: 30px;
-padding: 20px;
-border: none;
-}
+  .links {
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 30px;
+    padding: 20px;
+    border: none;
+  }
 
-.wrapper {
-height: auto;
-width: 90%;
-margin: 50px auto;
+  .wrapper {
+    height: auto;
+    width: 90%;
+    margin: 50px auto;
+  }
 }
-}
-
-.bucket {
-    color: #d9d7d6;
-}
-
-.achieve {
-    color: #d9d7d6;
-}
+      

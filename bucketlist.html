@@ -4,7 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Bucket List</title>
-    <link rel="stylesheet" href="style.css"> 
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+body {
+  background-color: #061115;
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+  padding: 0;
+  color: #d9d7d6;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px; /* Upper left position */
+  left: 20px;
+  background-color: #0a1419;
+  color: #d9d7d6;
+  border: 2px solid #6791c9;
+  padding: 10px 20px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 1000; /* Keeps the button on top */
+}
+
+.back-button:hover {
+  background-color: #6791c9;
+  color: #0a1419;
+}
+
+.container {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #0a1419;
+  box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+  color: #6791c9;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #162026;
+  border-radius: 8px;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+li h2 {
+  color: #6791c9;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+strong {
+  color: #d9d7d6;
+}
+
+a {
+  color: #6791c9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #d9d7d6;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  li {
+    padding: 15px;
+  }
+
+  li h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  li h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+    </style>
 </head>
 <body>
     <div class="bucket container">
@@ -13,24 +141,52 @@
             <!-- Add more items as needed -->
         </ul>
     </div>
+    <button onclick="goBack()" class="back-button">← Back</button>
+
 </body>
 <script>
+    function goBack() {
+            window.history.back();
+        }
+
     const bucket = {
-        gobekliTepe: {
-            name: "Gobekli Tepe",
-            location: "Turkey",
-            description: "The world's oldest known temple.",
-            url: "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe",
-            bucketEntryTitle: "Visit Gobekli Tepe",
-        },
-        tuvalu_islands: {
-            name: "Tuvalu Islands",
-            location: "Tuvalu",
-            description: "A group of nine islands in the Pacific Ocean.",
-            url: "https://en.wikipedia.org/wiki/Tuvalu",
-            bucketEntryTitle: "Visit Tuvalu Islands",
-        },
-    }
+            gobekliTepe: {
+                name: "Gobekli Tepe",
+                location: "Turkey",
+                description: "The world's oldest known temple.",
+                url: "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe",
+                bucketEntryTitle: "Visit Gobekli Tepe",
+            },
+            tuvalu_islands: {
+                name: "Tuvalu Islands",
+                location: "Tuvalu",
+                description: "A group of nine islands in the Pacific Ocean.",
+                url: "https://en.wikipedia.org/wiki/Tuvalu",
+                bucketEntryTitle: "Visit Tuvalu Islands",
+            },
+            vatican_city: {
+                name: "Vatican City",
+                location: "Vatican City",
+                description: "The smallest independent state in the world and the center of the Roman Catholic Church.",
+                url: "https://en.wikipedia.org/wiki/Vatican_City",
+                bucketEntryTitle: "Visit Vatican City",
+            },
+            vienna: {
+                name: "Vienna",
+                location: "Austria",
+                description: "Austria's capital, known for its artistic and intellectual legacy, and historic architecture.",
+                url: "https://en.wikipedia.org/wiki/Vienna",
+                bucketEntryTitle: "Visit Vienna",
+            },
+            rome: {
+                name: "Rome",
+                location: "Italy",
+                description: "Italy's capital, known for its nearly 3,000 years of globally influential art, architecture, and culture.",
+                url: "https://en.wikipedia.org/wiki/Rome",
+                bucketEntryTitle: "Visit Rome",
+            },
+        }
+
 
     const bucketList = document.querySelector('.bucket ul');
 
